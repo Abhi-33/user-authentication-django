@@ -1,0 +1,18 @@
+{% extends "master.html" %}
+
+{% block title %}Login Page{% endblock %} 
+
+{% block content %}
+
+<h1>!! REGISTER  !!</h1>
+<form  method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+{% comment %} User Form Fields {% endcomment %}
+    {{user_form.as_p}}
+
+    {% comment %} Profile form fields {% endcomment %}
+    {{profile_form.as_p}}
+    <button class="btn btn-primary">Register</button>
+</form>
+<p>Already have an account ? <a href="{%url 'login' %}">Login Here</a></p>
+{% endblock  %}
